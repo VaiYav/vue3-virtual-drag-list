@@ -92,9 +92,6 @@ declare const VirtualDragList: vue.DefineComponent<{
         default: string;
     };
     wrapStyle: {
-        /**
-         * reset component
-         */
         type: ObjectConstructor;
         default: () => {};
     };
@@ -120,7 +117,7 @@ declare const VirtualDragList: vue.DefineComponent<{
     };
 }, () => vue.VNode<vue.RendererNode, vue.RendererElement, {
     [key: string]: any;
-}>, unknown, {}, {}, vue.ComponentOptionsMixin, vue.ComponentOptionsMixin, ("update:dataSource" | "top" | "bottom" | "drag" | "drop" | "add" | "remove")[], "update:dataSource" | "top" | "bottom" | "drag" | "drop" | "add" | "remove", vue.VNodeProps & vue.AllowedComponentProps & vue.ComponentCustomProps, Readonly<vue.ExtractPropTypes<{
+}>, unknown, {}, {}, vue.ComponentOptionsMixin, vue.ComponentOptionsMixin, ("update:dataSource" | "top" | "bottom" | "drag" | "drop" | "add" | "remove" | "change")[], "update:dataSource" | "top" | "bottom" | "drag" | "drop" | "add" | "remove" | "change", vue.VNodeProps & vue.AllowedComponentProps & vue.ComponentCustomProps, Readonly<vue.ExtractPropTypes<{
     dataSource: {};
     dataKey: {
         type: StringConstructor;
@@ -212,9 +209,6 @@ declare const VirtualDragList: vue.DefineComponent<{
         default: string;
     };
     wrapStyle: {
-        /**
-         * reset component
-         */
         type: ObjectConstructor;
         default: () => {};
     };
@@ -246,6 +240,7 @@ declare const VirtualDragList: vue.DefineComponent<{
     onDrop?: ((...args: any[]) => any) | undefined;
     onAdd?: ((...args: any[]) => any) | undefined;
     onRemove?: ((...args: any[]) => any) | undefined;
+    onChange?: ((...args: any[]) => any) | undefined;
 }, {
     dataKey: string;
     pageMode: boolean;

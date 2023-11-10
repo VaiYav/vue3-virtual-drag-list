@@ -1385,9 +1385,17 @@
                 toList = _toConsumableArray(this.dynamicList);
                 fromState = this._getFromTo(from, fromList);
                 toState = this._getFromTo(to, toList);
+                this.ctx.emit('change', {
+                  from: Object.assign(Object.assign({}, fromState), {
+                    fromList: fromList
+                  }),
+                  to: Object.assign(Object.assign({}, toState), {
+                    fromList: fromList
+                  })
+                });
                 this.dynamicList.splice(fromState.index, 1);
                 this.dynamicList.splice(toState.index, 0, fromState.item);
-              case 6:
+              case 7:
               case "end":
                 return _context4.stop();
             }
@@ -1917,7 +1925,7 @@
   };
   var VirtualDragList = vue.defineComponent({
     props: VirtualProps,
-    emits: ['update:dataSource', 'top', 'bottom', 'drag', 'drop', 'add', 'remove'],
+    emits: ['update:dataSource', 'top', 'bottom', 'drag', 'drop', 'add', 'remove', 'change'],
     setup: function setup(props, _ref) {
       var emit = _ref.emit,
         slots = _ref.slots,
