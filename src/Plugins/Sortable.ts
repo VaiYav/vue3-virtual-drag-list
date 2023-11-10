@@ -124,6 +124,10 @@ class Sortable {
     const fromState = this._getFromTo(from, fromList);
     const toState = this._getFromTo(to, toList);
 
+    this.ctx.emit('change', {
+      from: { ...fromState, fromList },
+      to: { ...toState, fromList },
+    });
     this.dynamicList.splice(fromState.index, 1);
     this.dynamicList.splice(toState.index, 0, fromState.item);
   }

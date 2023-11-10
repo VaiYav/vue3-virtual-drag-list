@@ -24,7 +24,7 @@ const getList = (source) => {
 
 const VirtualDragList = defineComponent({
   props: VirtualProps,
-  emits: ['update:dataSource', 'top', 'bottom', 'drag', 'drop', 'add', 'remove'],
+  emits: ['update:dataSource', 'top', 'bottom', 'drag', 'drop', 'add', 'remove', 'change'],
   setup(props, { emit, slots, expose }) {
     const range = ref<Range>(Object.create(null));
 
