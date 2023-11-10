@@ -31,7 +31,7 @@ const DIRECTION = {
   BEHIND: 'BEHIND',
 };
 
-const LEADING_BUFFER = 2;
+const LEADING_BUFFER = 20;
 
 class Virtual {
   options: VirtualOptions;

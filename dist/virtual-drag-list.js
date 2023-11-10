@@ -1,5 +1,5 @@
 /*!
- * vue-virtual-draglist v3.1.4
+ * vue-virtual-draglist v3.1.5-alpha.0
  * open source under the MIT license
  * https://github.com/mfuu/vue3-virtual-drag-list#readme
  */
@@ -1486,7 +1486,7 @@
     FRONT: 'FRONT',
     BEHIND: 'BEHIND'
   };
-  var LEADING_BUFFER = 2;
+  var LEADING_BUFFER = 20;
   var Virtual = /*#__PURE__*/function () {
     function Virtual(options, callback) {
       _classCallCheck(this, Virtual);
