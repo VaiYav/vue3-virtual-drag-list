@@ -1,5 +1,5 @@
 /*!
- * vue-virtual-draglist v3.1.5-alpha.1
+ * vue-virtual-draglist v3.1.5-alpha.2
  * open source under the MIT license
  * https://github.com/mfuu/vue3-virtual-drag-list#readme
  */
@@ -1385,6 +1385,8 @@
                 toList = _toConsumableArray(this.dynamicList);
                 fromState = this._getFromTo(from, fromList);
                 toState = this._getFromTo(to, toList);
+                this.dynamicList.splice(fromState.index, 1);
+                this.dynamicList.splice(toState.index, 0, fromState.item);
                 this.ctx.emit('change', {
                   from: Object.assign(Object.assign({}, fromState), {
                     fromList: fromList
@@ -1393,8 +1395,6 @@
                     fromList: fromList
                   })
                 });
-                this.dynamicList.splice(fromState.index, 1);
-                this.dynamicList.splice(toState.index, 0, fromState.item);
               case 7:
               case "end":
                 return _context4.stop();
